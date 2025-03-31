@@ -45,7 +45,7 @@ app = FastAPI()
 # Add CORS middleware to the app
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow only the React frontend's origin
+    allow_origins=["https://medifacecareapp.onrender.com"],  # Allow only the React frontend's origin
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"],  # Allowed HTTP methods
     allow_headers=["*"],  # Allow all headers
