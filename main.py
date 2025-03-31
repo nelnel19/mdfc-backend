@@ -978,8 +978,6 @@ def classify_undertone(avg_lab_color):
     return best_match if min_diff < 60 else "Neutral"  # Adjust threshold
 
 
-
-
 @app.post("/analyze/")
 async def analyze_skin(file: UploadFile = File(...)):
     """Analyze skin tone and undertone from an uploaded image."""
