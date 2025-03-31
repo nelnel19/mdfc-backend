@@ -30,7 +30,6 @@ import cv2
 import numpy as np
 from PIL import Image
 import io
-import tensorflow as tf
 import os
 from dotenv import load_dotenv
 import requests
@@ -937,14 +936,6 @@ UNDERTONES = {
     "Warm": [(220, 200, 160), (200, 180, 140), (180, 160, 120)],
     "Neutral": [(190, 170, 150), (170, 150, 130), (150, 130, 110)]
 }
-
-
-def preprocess_image(image_bytes):
-    """Preprocess image for model prediction."""
-    image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)
-    image = cv2.resize(image, (224, 224))
-    image = np.expand_dims(image, axis=0) / 255.0  # Normalize
-    return image
 
 
 def classify_skin_tone(avg_color):
